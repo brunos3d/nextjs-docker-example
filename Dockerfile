@@ -20,6 +20,8 @@ RUN adduser -S nextjs -u 1001
 COPY package.json package-lock.json ./
 RUN npm ci --only=production
 
+RUN npx next telemetry disable
+
 COPY --from=builder --chown=nextjs:nodejs /app/public /app/.next ./
 
 USER nextjs
