@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  nextjs-docker-example:
+    restart: always
+    container_name: nextjs-docker-example
+    # env_file:
+    #  - .env.production
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # args:
+      #  ENV_VARIABLE: ${ENV_VARIABLE}
+      #  NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+    ports:
+      - 3000:3000
